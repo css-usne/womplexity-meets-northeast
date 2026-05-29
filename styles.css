@@ -1,0 +1,589 @@
+/* ============================================
+   Womplexity Meets Northeast - Stylesheet
+   ============================================ */
+
+:root {
+    --primary-red: #a61c1c;
+    --dark-maroon: #6b0000;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333;
+    --text-color: #333;
+    --border-color: #ddd;
+    --accent-gold: #d4af37;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid var(--primary-red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-red);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-red);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-maroon) 100%);
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.tagline {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+
+.about {
+    padding: 80px 20px;
+    background-color: var(--light-gray);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--primary-red);
+}
+
+.about-content {
+    margin-bottom: 60px;
+}
+
+.about-text h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--dark-maroon);
+}
+
+.about-text p {
+    font-size: 1.05em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.about-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.info-box {
+    background-color: white;
+    padding: 30px;
+    border-left: 5px solid var(--primary-red);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 4px;
+}
+
+.info-box h4 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: var(--primary-red);
+}
+
+.info-box p {
+    font-size: 1em;
+    line-height: 1.7;
+}
+
+.abstract {
+    background-color: white;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.abstract h3 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: var(--dark-maroon);
+}
+
+.abstract p {
+    font-size: 1.05em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* ============================================
+   Schedule Section
+   ============================================ */
+
+.schedule {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.schedule h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--primary-red);
+}
+
+.schedule-note {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.schedule-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 30px;
+    padding: 25px;
+    margin-bottom: 15px;
+    background-color: var(--light-gray);
+    border-left: 5px solid var(--primary-red);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-item:hover {
+    background-color: #f0f0f0;
+}
+
+.schedule-item.break {
+    border-left-color: #999;
+    background-color: #e8e8e8;
+}
+
+.schedule-item.panel {
+    border-left-color: var(--accent-gold);
+    background-color: #fffaf0;
+}
+
+.schedule-item .time {
+    font-weight: 700;
+    color: var(--primary-red);
+    font-size: 0.95em;
+}
+
+.schedule-item h4 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: var(--dark-maroon);
+}
+
+.schedule-item p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.panel-detail {
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* ============================================
+   Speakers Section
+   ============================================ */
+
+.speakers {
+    padding: 80px 20px;
+    background-color: var(--light-gray);
+}
+
+.speakers h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--primary-red);
+}
+
+.section-note {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.speaker-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.speaker-placeholder {
+    background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.speaker-card h4 {
+    padding: 20px 20px 10px;
+    font-size: 1.3em;
+    color: var(--primary-red);
+}
+
+.speaker-role {
+    padding: 0 20px 20px;
+    font-size: 0.95em;
+    color: #666;
+    font-style: italic;
+}
+
+.speakers-note {
+    background-color: white;
+    padding: 30px;
+    border-left: 5px solid var(--primary-red);
+    border-radius: 4px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.speakers-note p {
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+/* ============================================
+   Communities Section
+   ============================================ */
+
+.communities {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.communities h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--primary-red);
+}
+
+.communities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.community-card {
+    background-color: var(--light-gray);
+    padding: 40px;
+    border-radius: 8px;
+    border-top: 5px solid var(--primary-red);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.community-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: var(--dark-maroon);
+}
+
+.community-card p {
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.community-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.community-card li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.95em;
+}
+
+.community-card li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--primary-red);
+    font-weight: bold;
+}
+
+/* ============================================
+   Contact Section
+   ============================================ */
+
+.contact {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-maroon) 100%);
+    color: white;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-box {
+    background-color: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.contact-box h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    font-size: 1em;
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.contact-box a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.contact-box a:hover {
+    opacity: 0.8;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+    background-color: var(--dark-maroon);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.95em;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+        font-size: 0.9em;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .tagline {
+        font-size: 1.3em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .about h2, .schedule h2, .speakers h2, .communities h2, .contact h2 {
+        font-size: 2em;
+    }
+
+    .about-boxes, .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-item {
+        grid-template-columns: 120px 1fr;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .communities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .speakers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .nav-links a {
+        padding: 8px 0;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .tagline {
+        font-size: 1.1em;
+    }
+
+    .subtitle {
+        font-size: 0.95em;
+    }
+
+    .about, .schedule, .speakers, .communities, .contact {
+        padding: 40px 20px;
+    }
+
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .speakers-grid {
+        grid-template-columns: 1fr;
+    }
+}
