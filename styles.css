@@ -91,7 +91,9 @@ body {
    ============================================ */
 
 .hero {
-    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-maroon) 100%);
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"><defs><linearGradient id="grad" x1="0" y1="0" x2="100%" y2="100%"><stop offset="0%25" style="stop-color:%23a61c1c;stop-opacity:1" /><stop offset="100%25" style="stop-color:%236b0000;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23grad)" width="1600" height="900"/></svg>') center/cover;
+    background-attachment: fixed;
+    position: relative;
     color: white;
     padding: 120px 20px;
     text-align: center;
@@ -99,10 +101,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('northeast-map.svg');
+    background-size: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
 
 .hero-content {
     max-width: 800px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
