@@ -654,3 +654,16 @@ body {
         max-width: 120px !important;
     }
 }
+
+/* Logo shown at the top of the hero header */
+.hero-logo {
+    display: block;               /* put the logo on its own line */
+    max-width: 360px;             /* cap the logo width on large screens; lower this number to shrink it */
+    width: 80%;                   /* let it scale down with the screen on phones */
+    height: auto;                 /* keep the original proportions */
+    margin: 0 auto 1.5rem auto;   /* center it, and leave space below before the title */
+    background: #ffffff;          /* white card; the logo's own background is white, so this reads as one clean badge */
+    padding: 12px;                /* a little breathing room inside the card */
+    border-radius: 12px;          /* soft rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* gentle shadow so it lifts off the hero */
+}
