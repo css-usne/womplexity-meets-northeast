@@ -311,6 +311,73 @@ body {
 }
 
 /* ============================================
+   Call for Abstracts Section
+   ============================================ */
+
+.call-for-abstracts {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f0e6 0%, #efefef 100%);
+}
+
+.call-for-abstracts h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--primary-red);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--dark-maroon);
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.cfa-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    border-top: 5px solid var(--primary-red);
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cfa-content p {
+    font-size: 1.05em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.cfa-content strong {
+    color: var(--primary-red);
+}
+
+.cfa-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-maroon) 100%);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(166, 28, 28, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(166, 28, 28, 0.4);
+}
+
+/* ============================================
    Speakers Section
    ============================================ */
 
@@ -438,6 +505,7 @@ body {
 .community-card ul {
     list-style: none;
     padding: 0;
+    margin-bottom: 20px;
 }
 
 .community-card li {
@@ -453,6 +521,25 @@ body {
     left: 0;
     color: var(--primary-red);
     font-weight: bold;
+}
+
+.community-link {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.community-link:hover {
+    opacity: 0.7;
+}
+
+.qr-code {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
 }
 
 /* ============================================
@@ -546,7 +633,7 @@ body {
         font-size: 1em;
     }
 
-    .about h2, .schedule h2, .speakers h2, .communities h2, .contact h2 {
+    .about h2, .schedule h2, .speakers h2, .communities h2, .contact h2, .call-for-abstracts h2 {
         font-size: 2em;
     }
 
@@ -604,7 +691,7 @@ body {
         font-size: 0.95em;
     }
 
-    .about, .schedule, .speakers, .communities, .contact {
+    .about, .schedule, .speakers, .communities, .contact, .call-for-abstracts {
         padding: 40px 20px;
     }
 
@@ -615,5 +702,10 @@ body {
 
     .speakers-grid {
         grid-template-columns: 1fr;
+    }
+
+    .button {
+        padding: 12px 30px;
+        font-size: 0.95em;
     }
 }
