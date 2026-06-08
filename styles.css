@@ -91,7 +91,8 @@ body {
    ============================================ */
 
 .hero {
-    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-maroon) 100%);
+    /* background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-maroon) 100%); */
+    background: url('Satellite_logo_1.png') center / cover no-repeat;  /* logo as the hero background, scaled to fill and centered */
     color: white;
     padding: 120px 20px;
     text-align: center;
@@ -108,13 +109,23 @@ body {
     right: 0;
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="500" fill="url(%23grid)" /></svg>');
-    opacity: 0.5;
+    opacity: 0;   /* hide the faint grid so the logo shows cleanly */
 }
 
 .hero-content {
     max-width: 800px;
     position: relative;
     z-index: 1;
+    background: #ffffff;                          /* the white box */
+    color: var(--primary-red);                    /* red letters, matching the map and the rest of the site */
+    padding: 40px 50px;                           /* space inside the box around the text */
+    border-radius: 12px;                          /* soft rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);  /* shadow so the box lifts off the white parts of the logo */
+}
+
+.hero-content .tagline,
+.hero-content .subtitle {
+    opacity: 1;   /* full-strength red on the white box */
 }
 
 .hero h1 {
@@ -655,15 +666,3 @@ body {
     }
 }
 
-/* Logo shown at the top of the hero header */
-.hero-logo {
-    display: block;               /* put the logo on its own line */
-    max-width: 360px;             /* cap the logo width on large screens; lower this number to shrink it */
-    width: 80%;                   /* let it scale down with the screen on phones */
-    height: auto;                 /* keep the original proportions */
-    margin: 0 auto 1.5rem auto;   /* center it, and leave space below before the title */
-    background: #ffffff;          /* white card; the logo's own background is white, so this reads as one clean badge */
-    padding: 12px;                /* a little breathing room inside the card */
-    border-radius: 12px;          /* soft rounded corners */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* gentle shadow so it lifts off the hero */
-}
