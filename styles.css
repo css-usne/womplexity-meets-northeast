@@ -91,9 +91,7 @@ body {
    ============================================ */
 
 .hero {
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"><defs><linearGradient id="grad" x1="0" y1="0" x2="100%" y2="100%"><stop offset="0%25" style="stop-color:%23a61c1c;stop-opacity:1" /><stop offset="100%25" style="stop-color:%236b0000;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23grad)" width="1600" height="900"/></svg>') center/cover;
-    background-attachment: fixed;
-    position: relative;
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-maroon) 100%);
     color: white;
     padding: 120px 20px;
     text-align: center;
@@ -101,22 +99,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('northeast-map.svg');
-    background-size: 800px;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
-    z-index: 0;
 }
 
 .hero-overlay {
@@ -125,14 +107,14 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="500" fill="url(%23grid)" /></svg>');
+    opacity: 0.5;
 }
 
 .hero-content {
     max-width: 800px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -316,7 +298,7 @@ body {
 
 .call-for-abstracts {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #f5f0e6 0%, #efefef 100%);
+    background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
 }
 
 .call-for-abstracts h2 {
@@ -329,18 +311,16 @@ body {
 .section-subtitle {
     text-align: center;
     font-size: 1.2em;
-    color: var(--dark-maroon);
+    color: #666;
     margin-bottom: 40px;
-    font-weight: 600;
 }
 
 .cfa-content {
+    max-width: 900px;
+    margin: 0 auto;
     background-color: white;
     padding: 40px;
     border-radius: 8px;
-    border-top: 5px solid var(--primary-red);
-    max-width: 900px;
-    margin: 0 auto;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
@@ -348,10 +328,6 @@ body {
     font-size: 1.05em;
     margin-bottom: 20px;
     line-height: 1.8;
-}
-
-.cfa-content strong {
-    color: var(--primary-red);
 }
 
 .cfa-button {
@@ -364,17 +340,16 @@ body {
     background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-maroon) 100%);
     color: white;
     padding: 15px 40px;
+    border-radius: 5px;
     text-decoration: none;
-    border-radius: 4px;
     font-weight: 600;
-    font-size: 1.05em;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 12px rgba(166, 28, 28, 0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(166, 28, 28, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 /* ============================================
@@ -459,91 +434,7 @@ body {
 }
 
 /* ============================================
-   Communities Section
-   ============================================ */
-
-.communities {
-    padding: 80px 20px;
-    background-color: white;
-}
-
-.communities h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    color: var(--primary-red);
-}
-
-.communities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.community-card {
-    background-color: var(--light-gray);
-    padding: 40px;
-    border-radius: 8px;
-    border-top: 5px solid var(--primary-red);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.community-card h3 {
-    font-size: 1.6em;
-    margin-bottom: 20px;
-    color: var(--dark-maroon);
-}
-
-.community-card p {
-    font-size: 0.95em;
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
-.community-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-.community-card li {
-    padding: 8px 0;
-    padding-left: 25px;
-    position: relative;
-    font-size: 0.95em;
-}
-
-.community-card li:before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: var(--primary-red);
-    font-weight: bold;
-}
-
-.community-link {
-    color: var(--primary-red);
-    text-decoration: none;
-    font-weight: 600;
-    transition: opacity 0.3s ease;
-}
-
-.community-link:hover {
-    opacity: 0.7;
-}
-
-.qr-code {
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-}
-
-/* ============================================
-   Contact Section
+   Contact Section (Get Involved)
    ============================================ */
 
 .contact {
@@ -575,7 +466,17 @@ body {
 
 .contact-box h3 {
     font-size: 1.3em;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-box h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.contact-box h4:first-child {
+    margin-top: 0;
 }
 
 .contact-box p {
@@ -593,6 +494,51 @@ body {
 
 .contact-box a:hover {
     opacity: 0.8;
+}
+
+/* Communities Info Styling */
+
+.communities-info {
+    display: grid;
+    gap: 25px;
+}
+
+.community-item {
+    background-color: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-gold);
+}
+
+.community-item h4 {
+    color: var(--accent-gold);
+}
+
+.community-item p {
+    font-size: 0.95em;
+}
+
+.qr-code-container {
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.qr-code-img {
+    max-width: 200px !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 4px;
+    background-color: white;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.qr-code-container p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    opacity: 0.9;
 }
 
 /* ============================================
@@ -633,7 +579,7 @@ body {
         font-size: 1em;
     }
 
-    .about h2, .schedule h2, .speakers h2, .communities h2, .contact h2, .call-for-abstracts h2 {
+    .about h2, .schedule h2, .speakers h2, .call-for-abstracts h2, .contact h2 {
         font-size: 2em;
     }
 
@@ -647,12 +593,12 @@ body {
         padding: 15px;
     }
 
-    .communities-grid {
-        grid-template-columns: 1fr;
-    }
-
     .speakers-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .qr-code-img {
+        max-width: 150px !important;
     }
 }
 
@@ -691,7 +637,7 @@ body {
         font-size: 0.95em;
     }
 
-    .about, .schedule, .speakers, .communities, .contact, .call-for-abstracts {
+    .about, .schedule, .speakers, .call-for-abstracts, .contact {
         padding: 40px 20px;
     }
 
@@ -704,8 +650,7 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .button {
-        padding: 12px 30px;
-        font-size: 0.95em;
+    .qr-code-img {
+        max-width: 120px !important;
     }
 }
