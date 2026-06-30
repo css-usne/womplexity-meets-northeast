@@ -666,3 +666,54 @@ body {
     }
 }
 
+
+/* Featured (confirmed) speaker announcement */
+.featured-speaker {
+    display: flex;                          /* photo and text side by side */
+    gap: 30px;
+    align-items: flex-start;
+    background-color: white;
+    border-left: 5px solid var(--primary-red);   /* same accent as the info boxes */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto 50px auto;               /* centered, with space before the grid below */
+}
+
+.featured-photo {
+    width: 180px;                           /* fixed photo size */
+    height: 180px;                          /* square */
+    object-fit: cover;                      /* fill the square neatly whatever the original shape */
+    border-radius: 8px;
+    flex-shrink: 0;                         /* stop the photo from being squeezed */
+}
+
+.featured-info h4 {
+    font-size: 1.4em;
+    color: var(--primary-red);
+    margin-bottom: 5px;
+}
+
+.featured-role {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.featured-bio {
+    font-size: 1em;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+/* On narrow screens, stack the photo above the text */
+@media (max-width: 600px) {
+    .featured-speaker {
+        flex-direction: column;
+    }
+    .featured-photo {
+        align-self: center;
+    }
+}
+
