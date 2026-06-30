@@ -682,8 +682,9 @@ body {
 }
 
 .featured-photo {
-    width: 180px;                           /* fixed photo size */
-    height: 180px;                          /* square */
+    width: 180px !important;                /* fixed photo size */
+    height: 180px !important;               /* square */
+    max-width: 180px !important;            /* beat any inherited image cap */
     object-fit: cover;                      /* fill the square neatly whatever the original shape */
     border-radius: 8px;
     flex-shrink: 0;                         /* stop the photo from being squeezed */
