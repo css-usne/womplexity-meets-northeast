@@ -677,8 +677,13 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;   /* smooth lift on hover, like the TBA cards */
     max-width: 900px;
     margin: 0 auto 50px auto;               /* centered, with space before the grid below */
+}
+.featured-speaker:hover {
+    transform: translateY(-5px);                 /* same gentle rise the placeholder cards use */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);  /* slightly stronger shadow while hovered */
 }
 
 .featured-photo {
@@ -687,6 +692,7 @@ body {
     max-width: 180px !important;            /* beat any inherited image cap */
     object-fit: cover;                      /* fill the square neatly whatever the original shape */
     border-radius: 8px;
+    border: 4px solid var(--light-gray);   /* soft frame so the photo looks intentional */
     flex-shrink: 0;                         /* stop the photo from being squeezed */
 }
 
