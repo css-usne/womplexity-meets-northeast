@@ -724,3 +724,36 @@ body {
     }
 }
 
+
+/* Follow row in the Get in Touch card */
+.follow-label {
+    margin-top: 20px;            /* space above the icon row */
+    margin-bottom: 12px;
+}
+
+.social-links {
+    display: flex;               /* the icons sit in a row */
+    gap: 15px;                   /* space between them */
+}
+
+.social-links a {
+    display: inline-flex;        /* center the icon inside the circle */
+    align-items: center;
+    justify-content: center;
+    width: 44px;                 /* round button size */
+    height: 44px;
+    border-radius: 50%;          /* makes each one a circle */
+    background-color: rgba(255, 255, 255, 0.12);  /* soft circle on the dark background */
+    color: white;                /* icon color */
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-gold);   /* gold fill on hover, matching the site accent */
+    color: var(--dark-maroon);              /* dark icon on the gold */
+    transform: translateY(-3px);            /* small lift, like the other cards */
+    opacity: 1;                             /* keep the gold crisp, not faded */
+}
+
