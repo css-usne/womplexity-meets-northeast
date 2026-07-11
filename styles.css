@@ -757,3 +757,28 @@ body {
     opacity: 1;                             /* keep the gold crisp, not faded */
 }
 
+
+/* Big call-to-action button inside the hero box */
+.hero-content .button {
+    margin-top: 25px;   /* space between the date and the button */
+    font-size: 1.1em;   /* a little larger so it stands out */
+}
+
+/* Compact "Submit" button in the top navigation bar */
+.nav-links a.nav-cta {
+    background-color: var(--primary-red);
+    color: white;               /* white text on the red pill */
+    padding: 8px 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a.nav-cta:hover {
+    background-color: var(--dark-maroon);   /* darken on hover, rather than the usual link color change */
+    color: white;
+}
+
+/* When a nav link jumps to a section, keep the sticky navbar from covering its heading */
+section[id] {
+    scroll-margin-top: 90px;
+}
