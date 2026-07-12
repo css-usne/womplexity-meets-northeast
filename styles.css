@@ -782,3 +782,45 @@ body {
 section[id] {
     scroll-margin-top: 90px;
 }
+
+/* Amanda's real photo, sized to match the placeholder cards */
+.speaker-photo {
+    width: 100%;
+    height: 200px;         /* same height as the gray placeholders */
+    object-fit: cover;     /* fill the area neatly, cropping if needed */
+    display: block;
+}
+
+/* Let each card keep its natural height so an opened bio grows on its own */
+.speakers-grid {
+    align-items: start;
+}
+
+/* The unfolding bio inside Amanda's card */
+.bio-toggle {
+    padding: 0 20px 20px;        /* line up with the card's side padding */
+}
+
+.bio-toggle summary {
+    color: var(--primary-red);   /* looks like a small red link */
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    list-style: none;            /* hide the default disclosure triangle */
+}
+
+.bio-toggle summary::-webkit-details-marker {
+    display: none;               /* hide the triangle in Safari */
+}
+
+.bio-toggle summary:hover {
+    text-decoration: underline;
+}
+
+.bio-toggle p {
+    margin-top: 12px;
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: var(--text-color);
+    text-align: left;
+}
