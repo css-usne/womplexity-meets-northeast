@@ -844,5 +844,5 @@ section[id] {
 
 /* Nudge only Cigdem's crop upward so her chin is not cut */
 .cigdem-photo {
-    object-position: center 25%;   /* lower number shows more of the bottom of the face */
+    object-position: center 55%;   /* lower number shows more of the bottom of the face */
 }
