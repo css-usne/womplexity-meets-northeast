@@ -846,3 +846,11 @@ section[id] {
 .cigdem-photo {
     object-position: center 55%;   /* lower number shows more of the bottom of the face */
 }
+
+
+.talk-type {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8b5a8c;
+    margin: 4px 0;
+}
