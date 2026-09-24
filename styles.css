@@ -929,3 +929,52 @@ section[id] {
         gap: 4px;
     }
 }
+
+
+/* ============================================
+   Section spacing: less empty space between sections
+   These rules override the 80px section padding and the large title margins
+   set in the sections above, so change the section spacing here from now on.
+   ============================================ */
+
+/* Space above and below the content of every section (was 80px) */
+.about, .schedule, .call-for-abstracts, .speakers, .contact {
+    padding: 48px 20px;
+}
+
+/* Space between each section's title block and its content (was 40 to 50px).
+   Kept smaller than the section padding, so each title stays visually attached to its own section */
+.about h2,
+.schedule-note,
+.section-subtitle,
+.contact h2 {
+    margin-bottom: 30px;
+}
+
+/* About: in the HTML, the "About the Satellite" box sits inside .about-content,
+   so the 60px margin meant to separate it from the two boxes above ended up below it.
+   This removes the space below and puts a 30px gap above it, like the gap between the two boxes */
+.about-content {
+    margin-bottom: 0;
+}
+
+.abstract {
+    margin-top: 30px;
+}
+
+/* Speakers: the grid is the last thing in its section, so its bottom margin only added empty space */
+.speakers-grid {
+    margin-bottom: 0;
+}
+
+/* Schedule: no extra space after the last item, so every gap between sections is the same */
+.schedule-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Phones: tighter than the 40px set by the 480px rule above */
+@media (max-width: 480px) {
+    .about, .schedule, .call-for-abstracts, .speakers, .contact {
+        padding: 32px 20px;
+    }
+}
