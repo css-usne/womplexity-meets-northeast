@@ -848,9 +848,44 @@ section[id] {
 }
 
 
-.talk-type {
+/* ============================================
+   Schedule: session types (one color per type, shared by the left bar and the type label)
+   ============================================ */
+
+/* Type label ("Invited Talk", "Contributed Talk"). The selector .schedule-item p.talk-type
+   is more specific than .schedule-item p, which silently overrode the old .talk-type rule.
+   Labels on items without a type class keep the gray from .schedule-item p. */
+.schedule-item p.talk-type {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #8b5a8c;
     margin: 4px 0;
+}
+
+/* Invited talks: the site's red (same as the default bar, written out so each type is explicit) */
+.schedule-item.invited {
+    border-left-color: var(--primary-red);
+}
+
+.schedule-item.invited p.talk-type {
+    color: var(--primary-red);
+}
+
+/* Contributed talks: muted plum */
+.schedule-item.contributed {
+    border-left-color: #8b5a8c;
+}
+
+.schedule-item.contributed p.talk-type {
+    color: #8b5a8c;
+}
+
+/* CSS chapter segment: same gold look as the panel, since both are community segments */
+.schedule-item.chapter {
+    border-left-color: var(--accent-gold);
+    background-color: #fffaf0;
+}
+
+/* Closing remarks: neutral gray bar, so they are not mistaken for an invited talk */
+.schedule-item.closing {
+    border-left-color: #bbb;
 }
