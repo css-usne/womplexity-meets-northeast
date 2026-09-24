@@ -889,3 +889,43 @@ section[id] {
 .schedule-item.closing {
     border-left-color: #bbb;
 }
+
+
+
+/* ============================================
+   Schedule: compact layout
+   These rules override the spacing set in the Schedule Section and in the
+   768px media query above, so change the schedule spacing here from now on.
+   ============================================ */
+
+/* Narrow time column, small gap, tighter padding and less space between cards */
+.schedule-item {
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    padding: 14px 20px;
+    margin-bottom: 8px;
+}
+
+/* Name: slightly smaller, with almost no space before the type label */
+.schedule-item h4 {
+    font-size: 1.1em;
+    margin-bottom: 2px;
+}
+
+/* Talk titles: tighter line spacing, noticeable on two-line titles */
+.schedule-item p {
+    line-height: 1.45;
+}
+
+/* Type label: less space above and below */
+.schedule-item p.talk-type {
+    margin: 2px 0;
+}
+
+/* Phones: time above the content, as the 480px rule above did, now with a smaller gap */
+@media (max-width: 480px) {
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
