@@ -1032,3 +1032,16 @@ section[id] {
         grid-template-columns: 1fr;
     }
 }
+
+/* Last two rows: two cards each, centered, the same card width as the three-across rows (2026-10-15) */
+.speakers-grid.pairs {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: calc((100% - 60px) * 2 / 3 + 30px);
+    margin: 30px auto 0;
+}
+@media (max-width: 768px) {
+    .speakers-grid.pairs {
+        grid-template-columns: 1fr;
+        max-width: none;
+    }
+}
