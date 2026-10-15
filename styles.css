@@ -978,3 +978,57 @@ section[id] {
         padding: 32px 20px;
     }
 }
+
+/* ---------- Speaker cards: three per row, styled by role (2026-10-15) ---------- */
+
+/* Always three cards per row on wide screens, so each planned row of three stays together */
+.speakers-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Lets the colored band sit on top of the photo */
+.speaker-card {
+    position: relative;
+}
+
+/* Colored band across the top of the card, drawn over the photo so every card in a row keeps the same height */
+.speaker-card.featured::before,
+.speaker-card.organizer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--accent-gold);
+    z-index: 1;
+}
+
+/* Invited speakers and panelists: gold band, thin gold frame, bold red role */
+.speaker-card.featured {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(212, 175, 55, 0.55);
+}
+.speaker-card.featured:hover {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18), 0 0 0 2px rgba(212, 175, 55, 0.8);
+}
+.speaker-card.featured .role-label {
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.8em;
+    color: var(--primary-red);
+}
+
+/* Organizers and coordinators: the same plain card as the contributed talks, with a thinner gray band */
+.speaker-card.organizer::before {
+    height: 4px;
+    background: #9a9a9a;
+}
+
+/* Phones and narrow tablets: one card per row */
+@media (max-width: 768px) {
+    .speakers-grid {
+        grid-template-columns: 1fr;
+    }
+}
